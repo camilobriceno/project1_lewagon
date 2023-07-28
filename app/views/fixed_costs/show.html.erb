@@ -1,0 +1,20 @@
+<div class="return-arrow mt-5">
+    <%= link_to group_fixed_costs_path do %>
+    <i class="fa-solid fa-chevron-left" style="color:#21C560; font-size: 35px; cursor: pointer;" class="align-center"></i>
+    <% end %>
+</div>
+<div class="container-fixed-cost">
+  <h1>Expense detail page</h1>
+
+  <div class="task-card-index mb-5 mt-5" style="width: 70vw;">
+    <div class="task-owner mb-3 mt-3">
+      <h2><%= @fixed_cost.name %></h2>
+    </div>
+      <div class="task-detail mb-3 mt-3" style="display:flex; align-items:center; justify-content: center;">
+        <%= @fixed_cost.comments %>
+        <%= @fixed_cost.price%><%= " €" %>
+      </div>
+  </div>
+
+  <p>¡ You have succesfully added a new expense !</p>
+</div>

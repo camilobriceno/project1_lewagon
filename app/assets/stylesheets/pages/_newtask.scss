@@ -1,0 +1,44 @@
+#new_task{
+  height: 81vh;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-evenly;
+}
+
+#task_assigned_to_id {
+  border: 1px solid #f3f3f3;
+  background-color: white;
+  border-radius: 10px;
+  -webkit-box-shadow: -2px 15px 28px -7px rgba(235, 235, 235, 1);
+  -moz-box-shadow: -2px 15px 28px -7px rgba(235, 235, 235, 1);
+  box-shadow: -2px 15px 28px -7px #dadada;
+}
+
+
+#task_deadline_1i{
+  border: 1px solid #f3f3f3;
+    background-color: white;
+    border-radius: 10px;
+    -webkit-box-shadow: -2px 15px 28px -7px rgba(235, 235, 235, 1);
+    -moz-box-shadow: -2px 15px 28px -7px rgba(235, 235, 235, 1);
+    box-shadow: -2px 15px 28px -7px #dadada;
+}
+
+#task_deadline_2i {
+  border: 1px solid #f3f3f3;
+  background-color: white;
+  border-radius: 10px;
+  -webkit-box-shadow: -2px 15px 28px -7px rgba(235, 235, 235, 1);
+  -moz-box-shadow: -2px 15px 28px -7px rgba(235, 235, 235, 1);
+  box-shadow: -2px 15px 28px -7px #dadada;
+}
+
+#task_deadline_3i {
+  border: 1px solid #f3f3f3;
+  background-color: white;
+  border-radius: 10px;
+  -webkit-box-shadow: -2px 15px 28px -7px rgba(235, 235, 235, 1);
+  -moz-box-shadow: -2px 15px 28px -7px rgba(235, 235, 235, 1);
+  box-shadow: -2px 15px 28px -7px #dadada;
+}

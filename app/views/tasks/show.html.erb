@@ -1,0 +1,34 @@
+<h1 class="title mt-5">TASKS</h1>
+
+
+
+
+
+    <div class="show-tasks-wrapper">
+
+        <%# <div class="card-show-d"><%= render "shared/current_user_index_avatar" %>
+        <%# <div class="card-show-b"><%= @task.deadline.strftime("%d.%m.%Y") %></div>
+
+
+        <div class="card-show-d d-flex justify-content-center"><%= render "shared/current_user_index_avatar" %></div>
+        <div class="card-show-a al d-flex justify-content-center"><%= @task.deadline.strftime("%d.%m.%Y") %></div>
+        <div class="card-show-c d-flex justify-content-center"><%= @task.name %></div>
+        <div class="card-show-c d-flex justify-content-center"><%= @task.comments %></div>
+        <div class="card-show-c d-flex justify-content-center">
+        <% if @task.done? == true %>
+        <%= "done" %>
+        <% else %>
+        <%= "to be done" %>
+        <% end %>
+        </div>
+
+
+
+    </div>
+
+
+
+
+      <div>
+        <%= link_to "See all tasks", group_tasks_path, :class => "btn btn-primary" %>
+      </div>

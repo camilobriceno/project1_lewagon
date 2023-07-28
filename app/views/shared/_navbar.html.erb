@@ -1,0 +1,87 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-bottom">
+  <div class="container-fluid">
+
+    <%# <% if params[:controller] == "pages" %>
+          <%# <%= active_link_to root_path, active: true, class: "navbar-brand"  do %>
+          <%# <i class="fa-solid fa-house fa-xl"></i> %>
+          <%# <% end %>
+    <%# <% else %>
+        <%# <%= active_link_to root_path, active: false, class: "navbar-brand"  do %>
+          <%# <i class="fa-solid fa-house fa-xl"></i>
+        <% end %>
+    <%# <% end %>
+
+
+    <% if params[:controller] == "groups" %>
+          <%= active_link_to groups_path, active: true, class: "navbar-brand"  do %>
+          <i class="fa-solid fa-people-group fa-xl"></i>
+          <% end %>
+    <% else %>
+          <%= active_link_to groups_path, active: false, class: "navbar-brand"  do %>
+          <i class="fa-solid fa-people-group fa-xl"></i>
+          <% end %>
+    <% end %>
+
+
+    <% if MultipleGroup.find_by(user: current_user) %>
+      <% group_id = MultipleGroup.find_by(user: current_user).group_id %>
+        <% if params[:controller] == "pages" && params[:action] == "dashboard" %>
+          <%= active_link_to dashboard_group_path(group_id), active: true, class: "navbar-brand"  do %>
+          <i class="fa-solid fa-chart-pie"></i>
+          <% end %>
+      <% else %>
+          <%= active_link_to dashboard_group_path(group_id), active: false, class: "navbar-brand"  do %>
+          <i class="fa-solid fa-chart-pie"></i>
+          <% end %>
+      <% end %>
+    <% end %>
+
+
+    <% if MultipleGroup.find_by(user: current_user) %>
+      <% group_id = MultipleGroup.find_by(user: current_user).group_id %>
+        <% if params[:controller] == "tasks" && params[:action] == "usertasks" %>
+          <%= active_link_to group_tasks_path(group_id, tasks), active: true, class: "navbar-brand"  do %>
+          <i class="fa-solid fa-list-check fa-xl"></i>
+          <% end %>
+      <% else %>
+          <%= active_link_to group_tasks_path(group_id), active: false, class: "navbar-brand"  do %>
+          <i class="fa-solid fa-list-check fa-xl"></i>
+          <% end %>
+      <% end %>
+    <% end %>
+
+    <% if MultipleGroup.find_by(user: current_user) %>
+      <% group_id = MultipleGroup.find_by(user: current_user).group_id %>
+        <% if params[:controller] == "groups" && params[:action] == "show" %>
+          <%= active_link_to group_path(group_id), active: true, class: "navbar-brand"  do %>
+          <i class="fa-solid fa-house fa-xl"></i>
+          <% end %>
+      <% else %>
+          <%= active_link_to group_path(group_id), active: false, class: "navbar-brand"  do %>
+          <i class="fa-solid fa-house fa-xl"></i>
+          <% end %>
+      <% end %>
+    <% end %>
+
+
+    <% if user_signed_in? %>
+      <%= active_link_to destroy_user_session_path,  data: {turbo_method: :delete}  do %>
+      <i class="fa-solid fa-person-walking-arrow-right fa-xl"></i>
+      <% end %>
+    <% else %>
+      <%= active_link_to new_user_session_path  do %>
+      <i class="fa-solid fa-arrow-right-to-bracket fa-xl"></i>
+      <% end %>
+    <% end %>
+
+    <%# <%= link_to group_fixed_costs_path, class: "navbar-brand"  do %>
+      <%# <i class="fa-solid fa-euro-sign fa-xl" style=color:#23c560></i>
+    <% end %>
+
+    <%# <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon" ></span>
+    </button> %>
+
+
+  </div>
+</div>

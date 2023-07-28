@@ -1,0 +1,32 @@
+<div class="task-card-index-missed mb-3">
+  <div class="task-owner pt-3">
+    <div class="task-owner-bg-color" style="background-color: <%= ["#ffc1c6", "#c59ffe", "#fed464", "#c1d9f9", "#d7fafb"].sample %>">
+      <%= link_to usertasks_group_task_path(params[:group_id], task) do %>
+      <%= image_tag "default-avatar.png" %>
+      <% end %>
+    </div>
+    <h6 class="d-none" style="color:#c87f90"><%= User.find(task.assigned_to_id).first_name %>'s Task</h6>
+    <h5 class="" style="font-weight: 400; color: #b8b8b8;"> <%= ["😡", "😈", "🖕", "💩", "💣"].sample %> <%#= TimeDifference.between(task.created_at, Time.now).in_minutes %> </h5>
+  </div>
+
+  <h6><%= User.find(task.assigned_to_id).first_name %>'s Task</h6>
+  <div class="task-detail-missed mb-3 mt-3">
+  <h6 style="color: #c87f90;"> <%= task.deadline.strftime("%d.%m.%Y") %> </h6>
+  <h6 style="color: #c87f90;"><%= task.name %></h6>
+  </div>
+
+  <div class="task-options d-none mb-3">
+    <div class="task-options-flex">
+     <%= link_to usertasks_group_task_path(params[:group_id], task), data: {turbo_method: :patch} do %>
+        <div class="button-circle" style="background-color:#bef8d5; margin-right: 10px">
+          <i class="fa-solid fa-check"></i>
+        </div>
+      <% end %>
+
+      <div class="button-circle" style="background-color:#fecacd">
+        <i class="fa-solid fa-xmark" style="color:#af2632"></i>
+      </div>
+
+      </div>
+  </div>
+</div>

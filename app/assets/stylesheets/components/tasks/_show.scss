@@ -1,0 +1,70 @@
+.card-tasks-show {
+  background-color: $salmon;
+  padding: 20px;
+  color: $salmon;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  margin-top: 5px;
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+  .card-show-a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    background-color: white;
+    border-radius: 20px;
+    height: 35px;
+    padding: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  }
+
+  .card-show-b{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    background-color: white;
+    border-radius: 20px;
+    height: 35px;
+    padding-left: 2%;
+    padding: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  }
+
+  .card-show-c{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    background-color: white;
+    border-radius: 20px;
+    height: 35px;
+    align-content: center;
+  }
+
+  .card_show_d{
+    width: 90%;
+    align-content: end;
+    justify-content: space-between;
+    border-radius: 20px;
+    height: 40px;
+
+  }
+}
+
+.text-tasks-show {
+  flex-grow: 1;
+}
+
+
+.card-tasks-show {
+:hover {
+color: blue;
+}
+}

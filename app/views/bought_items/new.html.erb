@@ -1,0 +1,46 @@
+<div class="return-arrow">
+    <%= link_to pre_selection_group_shopping_lists_path do %>
+    <i class="fa-solid fa-chevron-left" style="color:#21C560; font-size: 35px; cursor: pointer;" class="align-center"></i>
+    <% end %>
+</div>
+
+<div class="wrapper-total" >
+  <div class="wrapper-overview">
+    <div class="new-wrapper" >
+      <%# <h1>Shopping list Overview(New)</h1> %>
+      <% @products.each do |product| %>
+        <div class="container-banner" data-controller="quantity">
+
+
+          <div class="banner-item mb-4">
+            <%= product.name %>
+
+
+
+             <%= image_tag "#{product.name.downcase}.png" %>
+          </div>
+
+           <span class="mb-3" data-quantity-target="price"><%= product.price%><%=" €"%></span>
+          <div class="price-banner">
+
+              <h3 data-quantity-target="total" class="badge badge-primary badge-pill">0</h3><h3>€</h3>
+
+
+            <div class="cart-totals" >
+              <input type="button" value="-" id="minus-button" for="quantity" data-quantity-target="minus">
+              <input class="w-50" type="number" id="quantity" value="0" min="0"  data-quantity-target="input">
+              <input type="button" value="+" id="plus-button" for="quantity"  data-quantity-target="plus">
+            </div>
+
+          </div>
+
+          </div>
+      <%end%>
+      <%#<h1><span data-quantity-target="superTotal" data-action="change->quantity#calculateTotal">0</span></h1>  %>
+    </div>
+  </div>
+
+  <div class="wrapper-choice ">
+    <%= link_to "Confirm Choice", group_shopping_list_bought_items_path(@group, boughts:  @selected_products), data:{turbo_method: :post}%>
+  </div>
+</div>

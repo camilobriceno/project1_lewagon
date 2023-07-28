@@ -1,0 +1,27 @@
+
+
+   <% @groups.each do |group| %>
+      <div class="group-card mt-2 mb-4">
+        <div class="group-card-wrapper">
+
+          <% if group.photo.attached? %>
+              <div class="bg-image mb-4" style="background-image:url('<%= cl_image_path group.photo.key %>')"></div>
+              <% else %>
+              <h6>Default Image</h6>
+          <% end %>
+
+            <h3><%= group.name %></h3>
+            <div class="group-info">
+            <i class="fa-solid fa-user-group"></i>
+            <h6><%= MultipleGroup.where(group: group).length %></h6>
+            </div>
+            <div class="group-action mt-3">
+              <h6><%= group.description %></h6>
+               <%= link_to group_path(group) do%>
+                    <i class="fa-solid fa-chevron-right"></i>
+              <% end %>
+
+            </div>
+          </div>
+        </div>
+  <% end %>

@@ -1,0 +1,36 @@
+<div class="return-arrow mt-5">
+    <%= link_to group_path(params[:group_id]) do %>
+    <i class="fa-solid fa-chevron-left" style="color:#21C560; font-size: 35px; cursor: pointer;" class="align-center"></i>
+    <% end %>
+</div>
+
+<div class="d-flex align-items-center flex-column mt-3 mb-5">
+<div class="mt-1 mb-5"><h3>Expense Manager</h3></div>
+
+  <%= link_to new_group_fixed_cost_path do %>
+    <i class="fa-solid fa-square-plus fa-2xl" style="color:#21C560; font-size: 50px;" class="align-center"></i>
+  <% end %>
+</div>
+
+    <% @fixed_costs.each do |cost| %>
+         <div class="bought-item-card mb-4">
+      <div class="bi-padding-wrapper">
+      <div class="bi-spacer-a">
+        <div>
+
+        <h3><%= cost.name %></h3>
+        <span style="color:black; position: relative;top: -5px;font-weight:300;">paid by <%= cost.user.first_name %></span>
+        </div>
+       <div class="bought-item-img-bg">
+       <i class="fa-solid <%=  cost.create_fa_icon %>"></i>
+
+        </div>
+       </div>
+        <div class="items-details-wrapper">
+
+          <h5><%= cost.price %> €</h5>
+        </div>
+
+      </div>
+    </div>
+    <% end %>

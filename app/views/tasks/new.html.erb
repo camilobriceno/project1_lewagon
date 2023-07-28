@@ -1,0 +1,21 @@
+<div class="return-arrow">
+  <%= link_to group_tasks_path do %>
+  <i class="fa-solid fa-chevron-left" style="color:#21C560; font-size: 35px; cursor: pointer;" class="align-center"></i>
+  <% end %>
+</div>
+<h1 class="title">👾<br>Create a new Task</h1>
+
+    <%= simple_form_for [@group, @task], class: "new-group" do |f| %>
+      <%= f.input :name, placeholder: "e.g. Clean something", required: true%>
+      <%= f.input :assigned_to_id, collection: @user_profiles, label_method: :first_name, placeholder: "Pick a housemate", required: true, label: "Assign to"%>
+      <%= f.input :urgent, label: "Urgent 🚨" %>
+      <%= f.input :comments, required: true %>
+      <%= f.input :deadline, required: true%>
+
+
+
+      <%= f.submit :class => "action btn btn-primary", style: "width: 100%" %>
+    <% end %>
+
+
+<div>

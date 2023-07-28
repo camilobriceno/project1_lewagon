@@ -1,0 +1,47 @@
+<h1><%= @user.first_name %>'s tasks</h1>
+  <h1 class="mb-3" style="color:#adadaf">Upcoming Tasks</h1>
+    <% @my_tasks.each do |task| %>
+      <div class="task-card-index mb-3">
+  <div class="task-owner pt-3">
+    <div class="task-owner-bg-color" style="background-color: <%= ["#ffc1c6", "#c59ffe", "#fed464", "#c1d9f9", "#d7fafb"].sample %>">
+      <%= link_to usertasks_group_task_path(@group, task.assigned_to_id) do %>
+                <% if @user.photo.attached? %>
+                    <%= cl_image_tag @user.photo.key, class: "group-member-avatar" %>
+                    <% else %>
+                    <%= image_tag "default-avatar.png", class: "group-member-avatar" %>
+                <% end %>
+      <% end %>
+    </div>
+    <h6><%= User.find(task.assigned_to_id).first_name %>'s Task</h6>
+    <% timedifferece = TimeDifference.between(task.created_at, Time.now).in_minutes %>
+      <% if timedifferece < 60 %>
+          <h6 style="font-weight: 400; color: #b8b8b8;">Created <%= TimeDifference.between(task.created_at, Time.now).in_minutes.round %> Mins ago</h6>
+        <% elsif timedifferece >= 60 && timedifferece <= 1440 %>
+          <h6 style="font-weight: 400; color: #b8b8b8;">Created <%= timedifferece = TimeDifference.between(task.created_at, Time.now).in_hours.round %> Hours ago</h6>
+        <% else %>
+          <h6 style="font-weight: 400; color: #b8b8b8;">Created <%= timedifferece = TimeDifference.between(task.created_at, Time.now).in_days.round %> Days ago</h6>
+        <% end %>
+  </div>
+
+  <div class="task-detail mb-3 mt-3">
+  <h6 style="color: #6f9cb6;"> <%= task.deadline.strftime("%d.%m.%Y") %> </h6>
+  <h6 style="color: #0f5779;">  <%= task.name %></h6>
+  </div>
+
+  <div class="task-options mb-3">
+    <div class="task-options-flex">
+     <%= link_to finish_task_group_task_path(@group, task), data: {turbo_method: :patch} do %>
+        <div class="button-circle" style="background-color:#bef8d5; margin-right: 10px">
+          <i class="fa-solid fa-check"></i>
+        </div>
+      <% end %>
+
+      <div class="button-circle" style="background-color:#fecacd">
+        <i class="fa-solid fa-xmark" style="color:#af2632"></i>
+      </div>
+
+      </div>
+  </div>
+</div>
+
+    <% end %>

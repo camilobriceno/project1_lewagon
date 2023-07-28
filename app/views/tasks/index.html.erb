@@ -1,0 +1,70 @@
+<div class="return-arrow">
+    <%= link_to group_path(params[:group_id]) do %>
+    <i class="fa-solid fa-chevron-left" style="color:#21C560; font-size: 35px; cursor: pointer;" class="align-center"></i>
+    <% end %>
+</div>
+<h1 class="title mt-5">TASKS</h1>
+  <div class="mt-5 mb-5" style="width: 100%; text-align:center">
+      <%= link_to new_group_task_path(params[:group_id]) do %>
+            <i class="fa-solid fa-square-plus fa-2xl" style="color:#23c560; text-align:center; font-size:50px"></i>
+      <% end %>
+  </div>
+
+  <div class="row justify-content-center">
+  <div class="col-sm-8 my-3">
+    <%= form_with url: group_tasks_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Type a keyword"
+        %>
+      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+    <div class="index-tasks-wrapper" data-controller="accordion">
+
+  <h1 class="mb-3" style="color:#adadaf">Upcoming Tasks</h1>
+    <% @tasks.each do |task| %>
+      <%= render "task_card", task:task %>
+    <% end %>
+
+
+        <%# <div class="card-show-d"><%= render "shared/current_user_index_avatar" %>
+        <%# <div class="card-show-b"><%= @task.deadline.strftime("%d.%m.%Y") %>
+
+     <button class="accordion mb-3" data-accordion-target="accordion"><h1 style="color:#adadaf">Missed Tasks</h1></button>
+        <div class="panel">
+
+    <% @missed_tasks.each do |task| %>
+      <%= render "missed_task_card", task:task %>
+    <% end %>
+
+
+  </div>
+
+
+
+</div>
+<%# <div class="d-flex align-items-center flex-column">
+
+  <h3>Manage your tasks</h3>
+  <%= link_to new_group_task_path do %>
+      <%# <div class="container">
+        <i class="fa-solid fa-square-plus fa-2xl" style="color:#DF6C4F" class="align-center" ></i>
+      </div>
+  <% end %>
+
+
+  <%# <p>Upcoming </p>
+  <div class="container tasks_index_bg_card">
+    <%= render "tasks/card_tasks_up_index"%>
+  <%# </div> %>
+
+  <%# <p>Backlog</p>
+    <div class="container tasks_index_bg_card">
+      <%= render "tasks/card_tasks_back_index" %>
+
+    <%# </div>
+ </div> %>

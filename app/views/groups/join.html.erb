@@ -1,0 +1,17 @@
+<div class="d-flex align-items-center flex-column">
+
+  <h1>Join a group</h1>
+
+    <div class="container tasks_index_bg_card">
+
+
+
+
+
+    <%= simple_form_for current_user, url: join_group_groups_path, method: :post do |f| %>
+      <%= f.input :group_id, collection: @groups, label_method: :name, prompt: 'Pick your group' %>
+      <%= f.button :submit, "Join" %>
+    <% end %>
+
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<h1>New product</h1>
+<%= simple_form_for :category, url: new_item_group_shopping_lists_path(), method: :get do |f|%>
+  <%= f.input :product, label: 'Product name' %>
+  <%= f.input :quantity, label: 'Quantity', collection: 1..8%>
+  <%= f.button :submit, value: 'Add to cart', class:"container-basket" %>
+<% end %>
+<%# <% raise %>
+<div class="banner-other-item">
+  <h5>Add another item</h5>
+</div>

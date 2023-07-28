@@ -1,0 +1,48 @@
+// Graphical variables
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
+
+// External libraries
+@import "bootstrap/scss/bootstrap";
+@import "font-awesome";
+@import 'animate';
+
+// Your CSS partials
+@import "components/index";
+@import "pages/index";
+@import "shopping_lists/index";
+@import "shopping_lists/new";
+@import "bought_items/index";
+@import "shopping_lists/new_item";
+@import "fixed_costs/show";
+@import "fixed_costs/new";
+
+
+.plus-btn::before {
+  content: "+";
+}
+
+.minus-btn::before {
+  content: "-";
+}
+
+.form-control{
+  border: 1px solid #f3f3f3;
+  background-color: white;
+  border-radius: 10px;
+  -webkit-box-shadow: -2px 15px 28px -7px rgba(235, 235, 235, 1);
+    -moz-box-shadow: -2px 15px 28px -7px rgba(235, 235, 235, 1);
+  box-shadow: -2px 15px 28px -7px #dadada;
+}
+
+
+.action {
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 32, 112, .15);
+  background: #000;
+  color: #fff;
+  padding: 17px;
+  border: none;
+  border-radius: 12px;
+}

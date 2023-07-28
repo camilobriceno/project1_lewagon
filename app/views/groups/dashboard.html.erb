@@ -1,0 +1,12 @@
+<div data-controller="charter" style="position: relative">
+  <h1 style="position: absolute;
+bottom: 35%;
+right: 41%;
+text-align: center;
+">Total<br>630 €</h1>
+  <canvas data-charter-target="canvas" id="myChart"></canvas>
+</div>
+
+<% @user_products.each do |item| %>
+    <%= item.user_id %>
+<% end %>

@@ -1,0 +1,15 @@
+.card_tasks_up_index {
+  // background-color: white;
+  padding: 20px 0;
+  color: $salmon;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+  margin-top: 5px;
+  height: 40px;
+}
+
+.text_tasks_index {
+  flex-grow: 1;
+}

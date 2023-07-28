@@ -1,0 +1,38 @@
+<div class="wrapper-total" >
+  <div class="wrapper-overview">
+    <div class="new-wrapper" >
+      <%# <h1>Shopping list Overview(New)</h1> %>
+      <% @products.each do |product| %>
+        <div class="container-banner" data-controller="quantity">
+          <div class="banner-item">
+            <%= product.name %>
+            <span data-quantity-target="price"><%= product.price%></span>
+          </div>
+          <div class="icon-placeholder">
+          <%= image_tag("/app/assets/images/icons/png/baguette.png", width: '40px', height: '40px') %>
+            <%# <i class="fa-regular fa-face-smile"></i> %>
+          </div>
+
+          <div class="price-banner">
+            <div class="total-banner">
+              <span style="width: 40px" data-quantity-target="total" class="badge badge-primary badge-pill">0</span>
+            </div>
+
+            <div class="cart-totals" >
+              <input type="button" value="-" id="minus-button" for="quantity" data-quantity-target="minus">
+              <input class="w-50" type="number" id="quantity" value="1" min="0"  data-quantity-target="input">
+              <input type="button" value="+" id="plus-button" for="quantity"  data-quantity-target="plus">
+            </div>
+
+          </div>
+
+          </div>
+      <%end%>
+      <%#<h1><span data-quantity-target="superTotal" data-action="change->quantity#calculateTotal">0</span></h1>  %>
+    </div>
+  </div>
+
+  <div class="wrapper-choice ">
+    <%= link_to "Confirm Choice", group_bought_items_path%>
+  </div>
+</div>

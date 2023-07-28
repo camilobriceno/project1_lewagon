@@ -1,0 +1,20 @@
+<div class="return-arrow mt-5">
+  <%= link_to group_fixed_costs_path do %>
+  <i class="fa-solid fa-chevron-left" style="color:#21C560; font-size: 35px; cursor: pointer;" class="align-center"></i>
+  <% end %>
+</div>
+  <div class="container mt-5">
+    <div class="title-expense mb-5">
+    <h2>Add your Expense</h2>
+    </div>
+    <%= simple_form_for [@group, @fixed_cost] do |f| %>
+      <%= f.input :name,  required: true%>
+      <%= f.association :user, collection: @user_profiles, label_method: :first_name, placeholder: "Pick a housemate", required: true, label: "Paid By"%>
+      <%= f.input :comments%>
+      <%= f.input :expense_type,  collection: ["Internet", "Subscription", "Rent", "TV-Licence", "Heating", "Electrcity", "Water"]%>
+      <%= f.input :price, required: true%>
+      <div class= "container-basket button-submit-expense">
+        <%= f.submit :class => "btn"%>
+      </div>
+    <% end %>
+  </div>

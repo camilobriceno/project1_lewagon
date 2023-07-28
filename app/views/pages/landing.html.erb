@@ -1,0 +1,34 @@
+  <div class="title mt-5 mb-3">
+    <h5>Manage your life in a simple way</h5>
+  </div>
+
+
+<%# <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+
+
+
+
+
+<%= simple_form_for :landing, html: { class: 'form-horizontal'} do |f| %>
+  <%= f.input :email, label: "Please enter your email" %>
+  <%= f.input :password, label: "Please enter your password" %>
+  <%= f.button :submit, "Sign In" %>
+<% end %>
+
+
+
+
+
+      <%# <div class="plus-wrapper">
+      <h6>Log in</h6>
+        <%= link_to  new_user_session_path  do %>
+          <%# <i class="fa-solid fa-arrow-right-to-bracket fa-xl"></i>
+         <% end %>
+      <%# </div>
+
+      <div class="plus-wrapper">
+      <h6>Sign up</h6>
+        <%= link_to  new_user_registration_path  do %>
+          <%# <i class="fa-solid fa-person-arrow-up-from-line fa-xl"></i>
+         <% end %>
+      <%# </div> %>

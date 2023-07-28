@@ -1,0 +1,179 @@
+.group-show-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  h6 {
+      padding-top: 5px;
+      padding-left: 10px;
+      font-weight: 300;
+    }
+}
+
+
+
+  p {
+    font-weight: 200;
+  }
+
+  .group-show-image-holder{
+    width: 29%;
+      background-color: blue;
+      border-radius: 50%;
+
+  }
+
+     .group-show-avatar {
+       height: 100px;
+       width: 100px;
+       text-align: center;
+     }
+
+
+    .option-card-group{
+      background-color: #f5f5f7;
+        width: 100%;
+        padding: 30px;
+        // display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border-radius: 12px;
+    }
+
+        .task-group-card {
+          width: 101%;
+          border-radius: 10px;
+          background-color: white;
+          border: 1px solid #f3f3f3;
+          background-color: white;
+          border-radius: 10px;
+          -webkit-box-shadow: -2px 15px 28px -7px rgba(235, 235, 235, 1);
+          -moz-box-shadow: -2px 15px 28px -7px rgba(235, 235, 235, 1);
+          box-shadow: -2px 15px 28px -7px #dadada;
+        }
+
+    .group-members-flex{
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+
+    .group-member-image-holder {
+      width: 39%;
+        border-radius: 50%;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+
+            img {
+                height: 17px;
+                width: 17px;
+              }
+    }
+
+
+    .group-show-task-card{
+      display: flex;
+      justify-content: space-between;
+
+
+    }
+
+         .group-task-show-icon-wrapper {
+           height: 29px;
+           width: 33px;
+           background-color: #feeef3;
+           justify-content: center;
+           align-items: center;
+           display: flex;
+           border-radius: 50%;
+         }
+
+    .action-task{
+      width: 90%;
+        background-color: #23c560;
+        border: none;
+        color: white;
+        margin-bottom: 11px;
+        border: 1px solid #75ffaa;
+    }
+
+    .shopping-action {
+      width: 90%;
+        background-color: #3f3f3f;
+        border: none;
+        color: white;
+        margin-bottom: 11px;
+
+
+    }
+
+    .group-task-button-wrapper{
+        display: flex;
+        justify-content: center;
+    }
+
+    .completion{
+    width: 100%;
+    height: 90%;
+    border-radius: 10px;
+    display: flex;
+    }
+
+    .statusbar-done{
+      width: 70%;
+      background-image: linear-gradient(to left, #f3ebff, #e3d3ff, #d2bcff, #bfa5fe, #aa8efe);
+      height: 30px;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+
+    .statusbar-left {
+      width: 30%;
+      background-color: #f2eaff;
+      height: 30px;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+
+.total-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 20px;
+}
+
+.basket-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  padding-right: 20px;
+
+  i {
+    position: relative;
+    color: #c7c7c8;
+
+      padding-right: 3px;
+      margin-left: 10px;
+  }
+}
+
+.more-card-holder{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.icon-holder{
+  background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+}

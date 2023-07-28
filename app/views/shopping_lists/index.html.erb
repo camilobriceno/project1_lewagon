@@ -1,0 +1,55 @@
+<div class="return-arrow mt-5 mr-5">
+    <%= link_to group_path(params[:group_id]) do %>
+    <i class="fa-solid fa-chevron-left" style="color:#21C560; font-size: 35px; cursor: pointer;" class="align-center"></i>
+    <% end %>
+</div>
+
+  <div class="animated fadeInDown">
+
+      <div class="plus-wrapper">
+        <%# <%= link_to group_bought_items_path do %>
+        <%= link_to pre_selection_group_shopping_lists_path(@group, shopping_list: @shopping_list)  do %>
+          <i class="fa-solid fa-square-plus fa-2xl" style="color:#23c560; text-align:center; font-size:50px"></i>
+         <% end %>
+      </div>
+
+
+
+
+<div class="total-wrapper">
+  <h1>Total</h1>
+  <h1 style="color:#adadad"><%= @total.round(2) %> €</h1>
+</div>
+</div>
+
+<div class="animated fadeInUp">
+  <% @bought_items.each do |bought_item| %>
+    <div class="bought-item-card mb-4">
+      <div class="bi-padding-wrapper">
+      <div class="bi-spacer-a">
+        <div>
+
+        <h3><%= bought_item.product.name %></h3>
+        <span style="color:black; position: relative;top: -5px;font-weight:300;">bought by <%= bought_item.user.first_name %></span>
+        </div>
+       <div class="bought-item-img-bg">
+          <%= image_tag "#{bought_item.product.name.downcase}.png" %>
+        </div>
+       </div>
+        <div class="items-details-wrapper">
+
+          <h5><%= bought_item.product.price %> €</h5>
+        </div>
+
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+
+
+<%# <%= image_tag 'icons/milk.svg', width: 25, height: 25 %>
+<%# collection: @product.map {|product|
+            #    [product.name,product.id,
+            #    image_tag:url(#{image_path "icons/#{product.name.downcase}.svg"})"]}%>

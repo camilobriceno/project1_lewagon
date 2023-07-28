@@ -1,0 +1,18 @@
+
+   <div class="container row d-flex justifycontent-between">
+    <% @missed_tasks.each do |task| %>
+      <div class="card_tasks_up_index">
+        <div class="card-a"><%= "X" %></div>
+        <div class="card-b"><%= task.name %></div>
+        <div class="card-c"><%= task.deadline.strftime("%d.%m.%Y") %></div>
+        <div class="card-d">
+          <div class="current_user_index_avatar">
+          <%= link_to   group_tasks_path(current_user.group_id, :my_user => current_user.id)  do %>
+             <i class="fa-solid fa-dog fa-xl" style="color:#DF6C4F" class="align-center"></i>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+  </div>

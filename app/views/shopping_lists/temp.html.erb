@@ -1,0 +1,19 @@
+<h1>Shopping list Overview(New)</h1>
+<%#
+<%= simple_form_for :category, url: group_shopping_list_path(:group_id, :id), method: :get do |f|%>
+<%= f.input :category,
+            as: :radio_buttons,
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'category-wrapper',
+            item_wrapper_class: 'category-item',
+            input_html: {class: 'category-selector', multiple: true },
+            collection: @products,
+            options: [[:quantity, 1..5]]
+            %>
+
+  <%= f.simple_fields_for :products do |product| %>
+  <%= f.input :quantity %>
+  <% end %>
+
+<%=f.submit "Confirm selections", :class => 'btn btn-outline-dark'%>
+<% end %> %>

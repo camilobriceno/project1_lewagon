@@ -1,0 +1,13 @@
+<h1 class="title mt-4 mb-3">👾<br>Create your Group</h1>
+
+<%= simple_form_for @group, class:"new-group" do |f| %>
+  <%= f.input :name, class:"mb-4" %>
+  <%= f.input :passcode, class:"mb-4" %>
+  <%= f.input :description, class:"mb-4" %>
+  <%= f.input :photo, as: :file, class:"mb-4" %>
+
+
+  <%= f.submit class: "action" %>
+
+
+<% end %>

@@ -1,0 +1,28 @@
+.banner-other-item{
+
+  width: fit-content;
+  height: fit-content;
+  // border: 1px solid red;
+  border-radius: 20px;
+  padding: 5px;
+  background-color: $salmon;
+
+}
+
+.submitButton{
+
+  width: fit-content;
+  height: fit-content;
+  border: 1px solid red;
+}
+
+
+.banner-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  img {
+    height: 30px;
+    width: 30px;
+  }
+}

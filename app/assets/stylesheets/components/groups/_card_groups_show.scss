@@ -1,0 +1,39 @@
+.card-groups-show {
+  background-color: $salmon;
+  opacity: 0.8;
+  padding: 20px;
+  color: $salmon;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  margin-top: 5px;
+  height: auto;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+  .group-image-round{
+    border-radius: 50;
+  }
+
+  .card-show-a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    background-color: white;
+    opacity: 0.8;
+    border-radius: 20px;
+    height: auto;
+    margin: 5px;
+    padding: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  }
+
+  }
+  .text-tasks-show {
+    flex-grow: 1;
+  }
